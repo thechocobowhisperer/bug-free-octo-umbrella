@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import {Button} from 'reactstrap';
 
-function App() {
-  return (
+class App extends Component {
+  state = {}
+
+  randomNumber = (event) => {
+    const num = Math.floor(Math.random() * 10) +1;
+    console.log(num)  
+    this.setState({integer: num});   
+  }
+
+  render () {
+    
+    return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Click the button to generate a random gun.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Button color='primary' onClick={(random) => this.randomNumber(random)}>
+          Find Loot!
+        </Button>
       </header>
     </div>
-  );
-}
+    );
+  };
+}; 
 
 export default App;
