@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+.card {
+  font-size: calc(10px + 1vmin);
+  color: #000000;
+}
